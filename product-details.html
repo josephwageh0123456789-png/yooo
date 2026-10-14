@@ -1,0 +1,180 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | JOO WEAR</title>
+    <link rel="stylesheet" href="styleee.css">
+</head>
+<body>
+
+<header>
+    <a href="wear store.html" class="logo">JOO WEAR</a>
+    <nav>
+        <a href="wear store.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="register.html">Create Account</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">Cart 🛒</a>
+    </nav>
+</header>
+
+<main class="product-page">
+    <a href="shop.html" class="back-link">← Back to Shop</a>
+
+    <section class="product-details">
+        <div class="product-gallery">
+            <img id="product-image" src="" alt="Product Image">
+        </div>
+
+        <div class="product-options">
+            <p class="product-category">JOO WEAR COLLECTION</p>
+            <h1 id="product-name"></h1>
+
+            <p class="product-price">
+                <span id="product-price"></span> EGP
+            </p>
+
+            <p class="product-description">
+                Comfortable style for everyday wear.
+            </p>
+
+            <div class="option-group">
+                <label>Color: <span id="selected-color">Black</span></label>
+                <div class="color-options">
+                    <button type="button" class="color-option active"
+                        style="background-color:#222222" data-color="Black"
+                        aria-label="Black"></button>
+                    <button type="button" class="color-option"
+                        style="background-color:#ffffff" data-color="White"
+                        aria-label="White"></button>
+                    <button type="button" class="color-option"
+                        style="background-color:#d6bd91" data-color="Beige"
+                        aria-label="Beige"></button>
+                    <button type="button" class="color-option"
+                        style="background-color:#263b60" data-color="Navy"
+                        aria-label="Navy"></button>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label for="product-size">Choose Size:</label>
+                <select id="product-size">
+                    <option value="">Select Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </div>
+
+            <div class="option-group">
+                <label for="product-quantity">Quantity:</label>
+                <input type="number" id="product-quantity"
+                    min="1" max="10" value="1">
+            </div>
+
+            <button type="button" id="add-product-btn" class="add-product-btn">
+                ADD TO CART
+            </button>
+
+            <p id="product-message" role="status"></p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <h2>JOO WEAR</h2>
+    <p>Your style, your identity.</p>
+    <p>© 2026 JOO WEAR. All Rights Reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+
+<script>
+    const products = {
+        "Classic White T-Shirt": {
+            price: 450,
+            image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80"
+        },
+        "Classic Hoodie": {
+            price: 850,
+            image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=80"
+        },
+        "Casual Pants": {
+            price: 650,
+            image: "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=80"
+        },
+        "Everyday T-Shirt": {
+            price: 400,
+            image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=80"
+        }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get("name");
+    const product = products[productName];
+
+    if (product) {
+        document.getElementById("product-name").textContent = productName;
+        document.getElementById("product-price").textContent = product.price;
+        document.getElementById("product-image").src = product.image;
+        document.getElementById("product-image").alt = productName;
+    } else {
+        document.getElementById("product-name").textContent = "Product not found";
+        document.getElementById("product-price").textContent = "0";
+        document.getElementById("add-product-btn").disabled = true;
+    }
+
+    let selectedColor = "Black";
+
+    document.querySelectorAll(".color-option").forEach(button => {
+        button.addEventListener("click", function () {
+            selectedColor = this.dataset.color;
+            document.getElementById("selected-color").textContent = selectedColor;
+
+            document.querySelectorAll(".color-option")
+                .forEach(btn => btn.classList.remove("active"));
+
+            this.classList.add("active");
+        });
+    });
+
+    document.getElementById("add-product-btn").addEventListener("click", function () {
+        const size = document.getElementById("product-size").value;
+        const quantity = Number(document.getElementById("product-quantity").value);
+
+        if (!product) {
+            alert("Product not found!");
+            return;
+        }
+
+        if (!size) {
+            alert("Please select a size!");
+            return;
+        }
+
+        if (!Number.isInteger(quantity) || quantity < 1 || quantity > 10) {
+            alert("Please enter a quantity between 1 and 10!");
+            return;
+        }
+
+        const cart = getCart();
+
+        cart.push({
+            name: productName,
+            price: product.price,
+            color: selectedColor,
+            size: size,
+            quantity: quantity
+        });
+
+        saveCart(cart);
+        alert(productName + " added to cart successfully!");
+    });
+</script>
+
+</body>
+</html>

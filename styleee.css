@@ -1,0 +1,1144 @@
+
+/* =========================
+   1. General Settings
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #171717;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================
+   2. Header
+========================= */
+
+header {
+    width: 100%;
+    min-height: 85px;
+    padding: 20px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    color: #111111;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555555;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #000000;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-btn,
+.register-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    color: #111111;
+    border: 1px solid #222222;
+    background-color: transparent;
+}
+
+.login-btn:hover {
+    color: #ffffff;
+    background-color: #111111;
+}
+
+.register-btn {
+    color: #ffffff;
+    background-color: #111111;
+    border: 1px solid #111111;
+}
+
+.register-btn:hover {
+    color: #111111;
+    background-color: #ffffff;
+}
+
+/* =========================
+   3. Hero Section
+========================= */
+
+.hero {
+    width: 100%;
+    min-height: 570px;
+    padding: 55px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+
+    background-color: #f5f5f5;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #777777;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+    font-size: clamp(42px, 5.5vw, 75px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    color: #111111;
+}
+
+.hero h1 span {
+    color: #777777;
+}
+
+.description {
+    max-width: 440px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #666666;
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 15px 28px;
+
+    color: #ffffff;
+    background-color: #111111;
+    border: 1px solid #111111;
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease;
+}
+
+.shop-btn:hover {
+    color: #111111;
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.04);
+}
+
+/* =========================
+   4. Categories Section
+========================= */
+
+.categories {
+    padding: 80px 7%;
+    text-align: center;
+}
+
+.categories h2 {
+    margin-bottom: 40px;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.category {
+    min-height: 200px;
+    padding: 35px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+    background-color: #171717;
+    border: 1px solid #171717;
+    border-radius: 6px;
+
+    transition: all 0.3s ease;
+}
+
+.category:hover {
+    color: #111111;
+    background-color: #ffffff;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.category h3 {
+    margin-bottom: 12px;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.category p {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.category:hover p {
+    color: #555555;
+}
+
+/* =========================
+   5. Footer
+========================= */
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #111111;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+footer p {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #bdbdbd;
+}
+
+/* =========================
+   6. Tablet Screens
+========================= */
+
+@media (max-width: 1000px) {
+    header {
+        padding: 20px 4%;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero {
+        padding: 45px 5%;
+        gap: 30px;
+    }
+
+    .hero-image {
+        height: 380px;
+    }
+
+    .categories {
+        padding: 65px 5%;
+    }
+}
+
+/* =========================
+   7. Mobile Screens
+========================= */
+
+@media (max-width: 700px) {
+    header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav {
+        width: 100%;
+        order: 3;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 22px;
+
+        padding-top: 12px;
+        border-top: 1px solid #eeeeee;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .header-buttons {
+        gap: 8px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 45px 6% 35px;
+
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 11vw, 60px);
+        letter-spacing: -1px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .shop-btn {
+        padding: 13px 22px;
+    }
+
+    .categories {
+        padding: 50px 6%;
+    }
+
+    .categories h2 {
+        margin-bottom: 28px;
+        font-size: 25px;
+    }
+
+    .category-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category {
+        min-height: 155px;
+        padding: 25px 15px;
+    }
+
+    footer {
+        padding: 35px 15px;
+    }
+}
+
+/* =========================
+   8. Small Mobile Screens
+========================= */
+
+@media (max-width: 380px) {
+    header {
+        padding: 15px 4%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .header-buttons {
+        gap: 5px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-image {
+        height: 280px;
+    }
+}
+
+/*//////*/
+.register-container {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: #f5f5f5;
+}
+
+.register-form {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 35px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register-form > p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.register-form label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.register-form input:focus {
+    border-color: black;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register-form button:hover {
+    background: #333;
+}
+
+.register-form .login-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* =========================
+Shopping Cart
+========================= */
+
+.section-title {
+text-align: center;
+font-size: 36px;
+font-weight: 900;
+letter-spacing: 2px;
+margin: 50px 20px 35px;
+color: #111;
+}
+
+.cart-container {
+max-width: 900px;
+min-height: 300px;
+margin: 0 auto 60px;
+padding: 35px;
+background: #fff;
+border: 1px solid #e5e5e5;
+border-radius: 10px;
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+#cart-items {
+margin-bottom: 30px;
+}
+
+.cart-item {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+padding: 22px;
+margin-bottom: 15px;
+background: #f7f7f7;
+border: 1px solid #eee;
+border-radius: 8px;
+}
+
+.cart-item h3 {
+font-size: 18px;
+color: #111;
+}
+
+.cart-item p {
+font-size: 16px;
+font-weight: bold;
+color: #555;
+}
+
+.cart-item button {
+padding: 9px 16px;
+background: #fff;
+color: #111;
+border: 1px solid #111;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.cart-item button:hover {
+background: #111;
+color: #fff;
+}
+
+#total {
+padding-top: 22px;
+margin-top: 20px;
+border-top: 1px solid #ddd;
+text-align: right;
+font-size: 25px;
+font-weight: 900;
+color: #111;
+}
+
+.checkout-btn {
+width: 100%;
+padding: 16px;
+margin-top: 25px;
+background: #111;
+color: #fff;
+border: 1px solid #111;
+border-radius: 5px;
+font-size: 15px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.checkout-btn:hover {
+background: #fff;
+color: #111;
+}
+
+.cart-container > a {
+display: inline-block;
+margin-top: 20px;
+color: #444;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.cart-container > a:hover {
+color: #000;
+text-decoration: underline;
+}
+
+#cart-items > p {
+padding: 35px 10px;
+text-align: center;
+color: #777;
+font-size: 17px;
+}
+
+@media (max-width: 600px) {
+.section-title {
+font-size: 26px;
+margin-top: 35px;
+}
+
+
+.cart-container {
+    margin: 0 15px 35px;
+    padding: 20px;
+}
+
+.cart-item {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+}
+
+.cart-item h3 {
+    width: 100%;
+}
+
+#total {
+    font-size: 21px;
+}
+
+}
+
+#categories {
+    padding: 80px 7%;
+    text-align: center;
+}
+
+
+#categories > h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+/*
+#categories > h2 {
+    margin-bottom: 40px;
+    width: 100%;
+    font-size: clamp(24px, 3vw, 34px);
+
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+*/
+@media (max-width: 1000px) {
+    #categories {
+        padding: 65px 5%;
+    }
+}
+
+@media (max-width: 700px) {
+    #categories {
+        padding: 50px 6%;
+    }
+
+    #categories > h2 {
+        margin-bottom: 28px;
+        font-size: 25px;
+    }
+}
+
+
+
+
+/* =========================
+JOO WEAR SHOP PAGE
+Black & White Design
+========================= */
+
+.shop-page {
+background: #ffffff;
+color: #111111;
+min-height: 100vh;
+padding-bottom: 70px;
+}
+
+.shop-heading {
+text-align: center;
+padding: 70px 20px 45px;
+}
+
+.shop-heading > p:first-child {
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 4px;
+color: #777777;
+margin-bottom: 15px;
+}
+
+.shop-heading h1 {
+font-size: clamp(30px, 5vw, 52px);
+font-weight: 900;
+letter-spacing: 2px;
+margin-bottom: 15px;
+}
+
+.shop-heading > p:last-child {
+color: #666666;
+font-size: 16px;
+}
+
+.shop-products {
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 25px;
+padding: 0 7%;
+max-width: 1500px;
+margin: 0 auto;
+}
+
+.product-card {
+background: #ffffff;
+border: 1px solid #eeeeee;
+overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.product-card img {
+width: 100%;
+height: 300px;
+object-fit: cover;
+display: block;
+background: #f5f5f5;
+}
+
+.product-info {
+padding: 20px 16px;
+}
+
+.product-info h3 {
+font-size: 17px;
+font-weight: 800;
+margin-bottom: 8px;
+}
+
+.product-info p {
+color: #777777;
+font-size: 14px;
+margin-bottom: 12px;
+}
+
+.product-info span {
+display: block;
+font-size: 18px;
+font-weight: 900;
+margin-bottom: 18px;
+}
+
+.product-info button {
+width: 100%;
+padding: 13px 10px;
+background: #111111;
+color: #ffffff;
+border: 1px solid #111111;
+font-size: 13px;
+font-weight: 700;
+cursor: pointer;
+transition: 0.3s ease;
+}
+
+.product-info button:hover {
+background: #ffffff;
+color: #111111;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+.shop-products {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+padding: 0 5%;
+gap: 20px;
+}
+
+.product-card img {
+    height: 280px;
+}
+
+
+}
+
+/* Mobile */
+
+@media (max-width: 550px) {
+.shop-heading {
+padding: 50px 15px 30px;
+}
+
+
+.shop-heading h1 {
+    font-size: 30px;
+}
+
+.shop-products {
+    grid-template-columns: 1fr;
+    padding: 0 7%;
+    gap: 25px;
+}
+
+.product-card img {
+    height: 350px;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+}
+
+
+
+
+
+
+
+
+/* Product Color Circles */
+.color-options {
+display: flex;
+align-items: center;
+gap: 14px;
+margin-top: 12px;
+}
+
+.color-option {
+width: 32px;
+height: 32px;
+border-radius: 50%;
+border: 2px solid #cccccc;
+cursor: pointer;
+transition: 0.3s ease;
+padding: 0;
+outline: none;
+}
+
+/* White circle border */
+.color-option[data-color="White"] {
+border: 2px solid #bbbbbb;
+}
+
+/* Selected color */
+.color-option.active {
+outline: 2px solid #111111;
+outline-offset: 4px;
+transform: scale(1.08);
+}
+
+/* Hover effect */
+.color-option:hover {
+transform: scale(1.12);
+}
+
+
+/* ==============================
+JOO WEAR - Product Details Page
+================================ */
+
+.product-page {
+max-width: 1200px;
+margin: 50px auto;
+padding: 0 30px 70px;
+}
+
+.back-link {
+display: inline-block;
+margin-bottom: 30px;
+color: #777;
+text-decoration: none;
+font-size: 14px;
+transition: 0.3s;
+}
+
+.back-link:hover {
+color: #b89b72;
+}
+
+.product-details {
+display: grid;
+grid-template-columns: 1.1fr 0.9fr;
+gap: 70px;
+align-items: start;
+}
+
+/* Product Image */
+
+.product-gallery {
+background: #f5f3ef;
+overflow: hidden;
+border-radius: 5px;
+min-height: 520px;
+}
+
+.product-gallery img {
+display: block;
+width: 100%;
+height: 520px;
+object-fit: cover;
+transition: transform 0.5s ease;
+}
+
+.product-gallery:hover img {
+transform: scale(1.04);
+}
+
+/* Product Information */
+
+.product-options {
+padding: 15px 0;
+}
+
+.product-category {
+color: #a58a64;
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 3px;
+margin-bottom: 18px;
+}
+
+.product-options h1 {
+color: #171717;
+font-size: 36px;
+font-weight: 600;
+line-height: 1.3;
+margin: 0 0 20px;
+}
+
+.product-price {
+font-size: 24px;
+font-weight: 600;
+color: #171717;
+margin: 0 0 25px;
+}
+
+.product-description {
+color: #777;
+font-size: 15px;
+line-height: 1.8;
+padding-bottom: 25px;
+border-bottom: 1px solid #e8e5df;
+}
+
+/* Options */
+
+.option-group {
+margin-top: 25px;
+}
+
+.option-group label {
+display: block;
+color: #222;
+font-size: 14px;
+font-weight: 600;
+margin-bottom: 14px;
+}
+
+#selected-color {
+color: #888;
+font-weight: 400;
+margin-left: 5px;
+}
+
+/* Color Circles */
+
+.color-options {
+display: flex;
+align-items: center;
+gap: 16px;
+margin-top: 15px;
+}
+
+.color-option {
+width: 32px;
+height: 32px;
+flex-shrink: 0;
+border-radius: 50%;
+border: 2px solid #d5d5d5;
+padding: 0;
+cursor: pointer;
+transition: 0.25s ease;
+}
+
+.color-option[data-color="White"] {
+border: 1px solid #bdbdbd;
+}
+
+.color-option.active {
+outline: 2px solid #171717;
+outline-offset: 4px;
+transform: scale(1.05);
+}
+
+.color-option:hover {
+transform: scale(1.12);
+}
+
+/* Size Dropdown */
+
+#product-size {
+display: block;
+width: 100%;
+height: 48px;
+padding: 0 14px;
+border: 1px solid #d8d5cf;
+border-radius: 3px;
+background: #fff;
+color: #222;
+font-size: 14px;
+cursor: pointer;
+outline: none;
+transition: border-color 0.3s;
+}
+
+#product-size:focus {
+border-color: #a58a64;
+}
+
+/* Quantity */
+
+#product-quantity {
+display: block;
+width: 100px;
+height: 44px;
+padding: 0 12px;
+border: 1px solid #d8d5cf;
+border-radius: 3px;
+font-size: 15px;
+outline: none;
+}
+
+#product-quantity:focus {
+border-color: #a58a64;
+}
+
+/* Add to Cart Button */
+
+.add-product-btn {
+width: 100%;
+min-height: 52px;
+margin-top: 32px;
+padding: 15px 20px;
+background: #171717;
+color: #fff;
+border: 1px solid #171717;
+border-radius: 3px;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 2px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.add-product-btn:hover {
+background: #a58a64;
+border-color: #a58a64;
+color: #fff;
+}
+
+.add-product-btn:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+/* Status Message */
+
+#product-message {
+margin-top: 15px;
+color: #4b7654;
+font-size: 14px;
+}
+
+/* Footer */
+
+footer {
+text-align: center;
+}
+
+/* Respons*

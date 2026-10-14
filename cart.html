@@ -1,0 +1,128 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | JOO WEAR</title>
+    <link rel="stylesheet" href="styleee.css">
+</head>
+
+<body>
+
+    <header>
+        <h2 class="logo">JOO WEAR</h2>
+
+        <nav>
+            <a href="wear store.html">Home</a>
+            <a href="register.html">Create Account</a>
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart 🛒</a>
+        </nav>
+    </header>
+
+    <h1 class="section-title">YOUR SHOPPING CART</h1>
+
+    <section class="cart-container">
+
+        <div id="cart-items"></div>
+
+        <h2 id="total">Total: 0 EGP</h2>
+
+        <button class="checkout-btn" onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+        <br><br>
+
+        <a href="wear store.html">Continue Shopping</a>
+
+    </section>
+
+    <script src="app.js"></script>
+
+   
+
+
+
+//kkkk
+<script>
+    let cart = getCart();
+
+    function displayCart() {
+        const container = document.getElementById("cart-items");
+        const totalElement = document.getElementById("total");
+
+        container.innerHTML = "";
+        let total = 0;
+
+        if (cart.length === 0) {
+            container.innerHTML = "<p>Your cart is empty.</p>";
+        }
+
+        cart.forEach((item, index) => {
+            const price = Number(item.price) || 0;
+            const quantity = Number(item.quantity) || 1;
+            const subtotal = price * quantity;
+
+            total += subtotal;
+
+            const itemElement = document.createElement("div");
+            itemElement.className = "cart-item";
+
+            itemElement.innerHTML = `
+                <h3></h3>
+                <p class="color"></p>
+                <p class="size"></p>
+                <p class="quantity"></p>
+                <p class="price"></p>
+                <p class="subtotal"></p>
+                <button type="button">Remove</button>
+            `;
+
+            itemElement.querySelector("h3").textContent = item.name;
+            itemElement.querySelector(".color").textContent =
+                "Color: " + (item.color || "Not selected");
+            itemElement.querySelector(".size").textContent =
+                "Size: " + (item.size || "Not selected");
+            itemElement.querySelector(".quantity").textContent =
+                "Quantity: " + quantity;
+            itemElement.querySelector(".price").textContent =
+                "Price: " + price + " EGP each";
+            itemElement.querySelector(".subtotal").textContent =
+                "Subtotal: " + subtotal + " EGP";
+
+            itemElement.querySelector("button").addEventListener("click", function () {
+                removeItem(index);
+            });
+
+            container.appendChild(itemElement);
+        });
+
+        totalElement.textContent = "Total: " + total + " EGP";
+    }
+
+    function removeItem(index) {
+        cart.splice(index, 1);
+        saveCart(cart);
+        displayCart();
+    }
+
+    function checkout() {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        alert("Checkout is a demo. No real order has been placed.");
+    }
+
+    displayCart();
+</script>
+
+
+
+
+
+</body>
+</html>
